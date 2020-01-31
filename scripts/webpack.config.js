@@ -27,6 +27,23 @@ module.exports = {
                     'css-loader'
                 ]
             },
+            {
+                test: /\.less$/,
+                use:[
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            
+                        }
+                    }
+                ]
+            }
         ]
+    },
+    devServer: {
+        port: 3000,
+        open: true,
     }
 }
