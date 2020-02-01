@@ -6,7 +6,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(process.cwd(), 'dist'),
-        filename: 'static/js/[name].[chunkHash:8].js'
+        filename: 'js/[name].[chunkHash:8].js'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -15,7 +15,7 @@ module.exports = {
             filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: 'static/css/[name].[chunkHash:8].css'
+            filename: 'css/[name].[chunkHash:8].css'
         }),
     ],
     module: {
@@ -38,6 +38,26 @@ module.exports = {
                         loader: 'less-loader',
                         options: {
 
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    // {
+                    //     loader: 'file-loader',
+                    //     options: {
+                    //         name: 'images/[name].[ext]',
+                    //         publicPath: '/'
+                    //     },
+                    // },
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 512,
+                            name: 'images/[name].[ext]',
+                            publicPath: '/'
                         }
                     }
                 ]
