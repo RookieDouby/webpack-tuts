@@ -4,8 +4,8 @@
   "description": "webpack lesson 01",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production --config scripts/webpack.config.js",
-    "dev": "webpack-dev-server --mode development --config scripts/webpack.config.js",
+    "build": "webpack --mode production --config scripts/webpack.config.prod.js",
+    "dev": "webpack-dev-server --mode development --config scripts/webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "rookiezhd",
